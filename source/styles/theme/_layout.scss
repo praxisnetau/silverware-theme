@@ -1,0 +1,120 @@
+/* Layout Styles
+===================================================================================================================== */
+
+#Header {
+  color: $white;
+  background-color: $brand-primary;
+}
+
+#Layout {
+  background-color: $gray-lighter;
+}
+
+#Crumbs {
+  margin-top: $spacer;
+}
+
+#PageLayout, #HomePageLayout {
+  
+  background-color: $white;
+  
+  .pagecomponent {
+    
+    .content-container {
+      
+      margin-bottom: $spacer 0;
+      
+      article {
+        
+        > header h1 {
+          color: $gray;
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+}
+
+#HomePageLayout {
+  
+  .content-container {
+    padding: $spacer 0 $spacer-half;
+  }
+  
+}
+
+#ShareThisPage {
+  
+  > header h3 {
+    color: $gray-light;
+    font-size: 1.3rem;
+    text-transform: lowercase;
+  }
+  
+  margin-bottom: $spacer;
+  
+}
+
+#Sidebar {
+  
+  background-color: $gray-lighter;
+  
+  a {
+    color: $gray-light;
+  }
+  
+  .basecomponent {
+    
+    margin: $spacer 0;
+    padding: $spacer;
+    border-radius: $spacer-half;
+    background-color: $white;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    
+    > header h3 {
+      color: $gray-light;
+      font-size: 1.3rem;
+      text-transform: lowercase;
+    }
+    
+  }
+  
+}
+
+#Widgets {
+  
+  color: $gray;
+  background-color: $gray-lightish;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2) inset;
+  
+  .basecomponent {
+    
+    margin: $spacer 0;
+    padding: $spacer;
+    border-radius: $spacer-half;
+    background-color: $gray-lighter;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    
+    > header h3 {
+      font-size: 1.5rem;
+      text-transform: lowercase;
+    }
+    
+  }
+  
+}
+
+#Footer {
+  
+  color: $white;
+  padding: $spacer 0;
+  background-color: $gray-light;
+  
+  a {
+    color: $white;
+  }
+  
+}

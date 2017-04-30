@@ -1,0 +1,14 @@
+/* Form Styles
+===================================================================================================================== */
+
+// File Field Styles:
+
+.custom-file-control {
+  
+  overflow: hidden;
+  
+  &.selected:lang(en)::after {
+    content: "" !important;
+  }
+  
+}

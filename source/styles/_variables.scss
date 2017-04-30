@@ -1,0 +1,82 @@
+/* SilverWare Theme Variables
+===================================================================================================================== */
+
+// Spacers:
+
+$spacer: 1rem;
+$spacer-quarter: ($spacer * .25);
+$spacer-half:    ($spacer * .5);
+$spacer-double:  ($spacer * 2);
+
+// Grid:
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Colors:
+
+$white:  #fff;
+$black:  #000;
+$red:    #d9534f;
+$orange: #f0ad4e;
+$yellow: #ffd500;
+$green:  #5cb85c;
+$blue:   #0275d8;
+$teal:   #5bc0de;
+$pink:   #ff5b77;
+$purple: #613d7c;
+
+// Grayscale:
+
+$gray-dark:     #292b2c;
+$gray:          #464a4c;
+$gray-light:    #636c72;
+$gray-lightish: #939ca2;
+$gray-lighter:  #eceeef;
+$gray-lightest: #f7f7f9;
+
+// Brand:
+
+$brand-primary: #139fda;
+$brand-success: $green;
+$brand-info:    $teal;
+$brand-warning: $orange;
+$brand-danger:  $red;
+$brand-inverse: $gray-dark;
+
+// Grayscale:
+
+$gray-dark:     #292b2c;
+$gray:          #464a4c;
+$gray-light:    #636c72;
+$gray-lighter:  #eceeef;
+$gray-lightest: #f7f7f9;
+
+// Fonts:
+
+$font-size-base: 1rem;
+$font-size-lg:   1.25rem;
+$font-size-sm:   .875rem;
+$font-size-xs:   .75rem;
+
+$font-weight-normal: 400;
+$font-weight-bolder: 600;
+$font-weight-bold:   700;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.6;
+
+// Headings:
+
+$headings-margin-bottom: $spacer;
+
+// Lists:
+
+$ul-style-type: square;
+$ol-style-type: decimal;
+

@@ -1,0 +1,1 @@
+<p id="{$FormName}_error" class="message<% if $MessageType %> $MessageType<% end_if %>"<% if not $Message %> style="display: none"<% end_if %>>$Message</p>
