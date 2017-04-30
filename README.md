@@ -32,6 +32,28 @@ Installation is via [Composer][composer]:
 $ composer require silverware/theme
 ```
 
+You will also need to use Yarn (or NPM) to install the theme dependencies:
+
+```
+$ cd themes/silverware-theme
+$ yarn install
+```
+
+Once your theme dependencies are installed, execute the following to start the webpack development server:
+
+```
+$ yarn start
+```
+
+The theme should now compile with hot module reloading enabled, allowing the browser to automatically reload
+and update your styles as you make changes to the theme SASS.
+
+To prepare your theme for production, execute the following:
+
+```
+$ yarn build
+```
+
 ## Usage
 
 To use this theme with your SilverWare application, you will need to configure `SSViewer` via YAML:
