@@ -17,11 +17,14 @@
       "homepage": "http://www.praxis.net.au"
     }
   ],
-  "extra": {
-    "installer-name": "silverware-theme"
-  },
   "require": {
     "silverware/silverware": "^0.1@dev"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    },
+    "installer-name": "silverware-theme"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
