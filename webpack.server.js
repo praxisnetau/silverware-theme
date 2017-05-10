@@ -23,6 +23,9 @@ const server = new WebpackDevServer(
     publicPath: config.output.publicPath,
     stats: {
       colors: true
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*'
     }
   }
 );
