@@ -18,7 +18,7 @@
     }
   ],
   "require": {
-    "silverware/silverware": "^0.2@dev"
+    "silverware/silverware": "~0.3@dev"
   },
   "extra": {
     "branch-alias": {
