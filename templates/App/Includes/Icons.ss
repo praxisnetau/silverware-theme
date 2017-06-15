@@ -18,5 +18,7 @@
     <link rel="icon" type="$AppIconTouchType" href="$getAppIconTouchResized(228,228).URL" sizes="228x228">
     <meta name="msapplication-TileImage" content="$getAppIconTouchResized(144,144).URL">
   <% end_if %>
-  <link rel="icon" type="$FavIconType" href="$FavIconURL" sizes="16x16">
+  <% if $FavIconType && $FavIconURL %>
+    <link rel="icon" type="$FavIconType" href="$FavIconURL" sizes="16x16">
+  <% end_if %>
 <% end_with %>

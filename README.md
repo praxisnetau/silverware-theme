@@ -1,5 +1,9 @@
 # SilverWare Theme
 
+[![Latest Stable Version](https://poser.pugx.org/silverware/theme/v/stable)](https://packagist.org/packages/silverware/theme)
+[![Latest Unstable Version](https://poser.pugx.org/silverware/theme/v/unstable)](https://packagist.org/packages/silverware/theme)
+[![License](https://poser.pugx.org/silverware/theme/license)](https://packagist.org/packages/silverware/theme)
+
 The default theme for a SilverWare application, based upon:
 
 - [Webpack v2][webpack] (includes [dev server][webpack-dev-server])

@@ -18,11 +18,11 @@
     }
   ],
   "require": {
-    "silverware/silverware": "~0.3@dev"
+    "silverware/silverware": "^1.0"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.1.x-dev"
+      "dev-master": "1.0.x-dev"
     },
     "installer-name": "silverware-theme"
   },
