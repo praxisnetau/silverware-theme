@@ -1,20 +1,29 @@
 /* Layout Styles
 ===================================================================================================================== */
 
+// Header Styles:
+
 #Header {
   color: $white;
   background-color: $brand-primary;
 }
 
+// Layout Styles:
+
 #Layout {
   background-color: $gray-lighter;
 }
+
+// Crumb Styles:
 
 #Crumbs {
   margin-top: $spacer;
 }
 
-#PageLayout, #HomePageLayout {
+// Page Layout Styles:
+
+#PageLayout,
+#HomePageLayout {
   
   background-color: $white;
   
@@ -38,25 +47,21 @@
   
 }
 
+// Home Page Layout Styles:
+
 #HomePageLayout {
   
-  .content-container {
-    padding: $spacer 0 $spacer-half;
+  .pagecomponent {
+    
+    .content-container {
+      padding: $spacer 0 $spacer-half;
+    }
+    
   }
   
 }
 
-#ShareThisPage {
-  
-  > header h3 {
-    color: $gray-light;
-    font-size: 1.3rem;
-    text-transform: lowercase;
-  }
-  
-  margin-bottom: $spacer;
-  
-}
+// Sidebar Styles:
 
 #Sidebar {
   
@@ -72,7 +77,7 @@
     padding: $spacer;
     border-radius: $spacer-half;
     background-color: $white;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     
     > header h3 {
       color: $gray-light;
@@ -84,19 +89,21 @@
   
 }
 
+// Widget Styles:
+
 #Widgets {
   
   color: $gray;
   background-color: $gray-lightish;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.2) inset;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) inset;
   
   .basecomponent {
     
-    margin: $spacer 0;
+    margin: $spacer 0 0;
     padding: $spacer;
     border-radius: $spacer-half;
     background-color: $gray-lighter;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     
     > header h3 {
       font-size: 1.5rem;
@@ -105,7 +112,13 @@
     
   }
   
+  .column:last-child .basecomponent {
+    margin-bottom: $spacer;
+  }
+  
 }
+
+// Footer Styles:
 
 #Footer {
   
