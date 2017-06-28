@@ -1,4 +1,4 @@
-<% if $ListComponent %>
+<% if $HasListComponent %>
   <div class="list">
     $ListComponent
   </div>
