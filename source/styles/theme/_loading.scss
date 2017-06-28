@@ -1,0 +1,28 @@
+/* Loading Styles
+===================================================================================================================== */
+
+.loading {
+  
+  position: relative;
+  
+  .loading-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    color: $loading-overlay-color-foreground;
+    background-color: $loading-overlay-color-background;
+  }
+  
+  .loading-spinner {
+    margin: 0;
+    text-align: center;
+    font-size: $loading-overlay-spinner-font-size;
+  }
+  
+  .loading-text {
+    display: none;
+  }
+  
+}

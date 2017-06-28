@@ -13,6 +13,10 @@ require('font-awesome');
 
 require('bootstrap-loader');
 
+// Load jQuery Loading Overlay:
+
+require('jquery-loading-overlay');
+
 // Load jQuery Scripts:
 
-require('jquery/CustomFileField');
+require('jquery/CustomFileField.js');

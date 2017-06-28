@@ -79,3 +79,9 @@ $headings-margin-bottom: $spacer;
 
 $ul-style-type: square;
 $ol-style-type: decimal;
+
+// Loading:
+
+$loading-overlay-color-background:  rgba(255, 255, 255, 0.75);
+$loading-overlay-color-foreground:  rgba(0, 0, 0, 0.5);
+$loading-overlay-spinner-font-size: 3rem;
