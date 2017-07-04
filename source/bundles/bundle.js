@@ -1,6 +1,10 @@
 /* SilverWare Theme Bundle
 ===================================================================================================================== */
 
+// Load jQuery:
+
+require('jquery');
+
 // Load Modernizr:
 
 require('modernizr');
@@ -20,3 +24,4 @@ require('jquery-loading-overlay');
 // Load jQuery Scripts:
 
 require('jquery/CustomFileField.js');
+require('jquery/LoadingOverlay.js')

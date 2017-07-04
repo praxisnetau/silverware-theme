@@ -32,7 +32,9 @@
     "watch": "webpack --env.development --colors --watch",
     "build": "webpack --env.production --colors --optimize-minimize"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
   "devDependencies": {
     "autoprefixer": "^6.7.6",
     "babel-core": "^6.23.1",

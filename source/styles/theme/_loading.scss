@@ -4,6 +4,7 @@
 .loading {
   
   position: relative;
+  min-height: $loading-overlay-spinner-font-size;
   
   .loading-overlay {
     top: 0;
@@ -19,6 +20,7 @@
     margin: 0;
     text-align: center;
     font-size: $loading-overlay-spinner-font-size;
+    line-height: $loading-overlay-spinner-font-size;
   }
   
   .loading-text {
