@@ -3,6 +3,8 @@
 
 .pagination {
   
+  flex-wrap: wrap;
+  
   .page-link {
     white-space: nowrap;
   }
