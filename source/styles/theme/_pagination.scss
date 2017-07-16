@@ -1,0 +1,35 @@
+/* Pagination Styles
+===================================================================================================================== */
+
+.pagination {
+  
+  .page-link {
+    white-space: nowrap;
+  }
+  
+  .page-more {
+    color: $gray-light;
+    display: block;
+    position: relative;
+    line-height: $pagination-line-height;
+    padding: $pagination-padding-y $pagination-padding-x;
+    border: $pagination-border-width solid transparent;
+  }
+  
+}
+
+.icon-only {
+  
+  .page-link > span.text {
+    display: none;
+  }
+  
+}
+
+.text-only {
+  
+  .page-link > i.fa {
+    display: none;
+  }
+  
+}

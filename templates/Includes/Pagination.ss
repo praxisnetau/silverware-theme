@@ -3,22 +3,26 @@
     <ul class="pagination<% if $Size %> pagination-$Size<% end_if %>">
       <% if $List.NotFirstPage %>
         <li class="page-item">
-          <a class="page-link" href="$List.PrevLink.RAW" title="<%t Pagination_ss.PREVIOUS 'Previous' %>">
+          <a class="page-link" href="$List.PrevLink.RAW" title="<%t Pagination_ss.PREVIOUS 'Previous' %>" aria-label="<%t Pagination_ss.PREVIOUS 'Previous' %>">
             <% include Icon Name='arrow-left' %>
             <span class="text"><%t Pagination_ss.PREVIOUS 'Previous' %></span>
           </a>
         </li>
       <% end_if %>
-      <% loop $List.Pages($Max) %>
+      <% loop $List.PaginationSummary(5) %>
         <li class="page-item<% if $CurrentBool %> active<% end_if %>">
-          <a class="page-link" href="$Link.RAW">
-            <span class="page">$PageNum</span>
-          </a>
+          <% if $Link %>
+            <a class="page-link" href="$Link.RAW">
+              <span class="page">$PageNum</span>
+            </a>
+          <% else %>
+            <span class="page-more">...</span>
+          <% end_if %>
         </li>
       <% end_loop %>
       <% if $List.NotLastPage %>
         <li class="page-item">
-          <a class="page-link" href="$List.NextLink.RAW" title="<%t Pagination_ss.NEXT 'Next' %>">
+          <a class="page-link" href="$List.NextLink.RAW" title="<%t Pagination_ss.NEXT 'Next' %>" aria-label="<%t Pagination_ss.NEXT 'Next' %>">
             <span class="text"><%t Pagination_ss.NEXT 'Next' %></span>
             <% include Icon Name='arrow-right' %>
           </a>
