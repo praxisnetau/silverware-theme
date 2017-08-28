@@ -29,32 +29,16 @@
   
   .pagecomponent {
     
-    .content-container {
+    .content-container > article {
       
-      margin-bottom: $spacer 0;
+      margin: $spacer 0 0;
       
-      article {
-        
-        > header h1 {
-          color: $gray;
-        }
-        
+      > header > h1 {
+        color: $gray-light;
+        font-weight: 300;
+        text-transform: uppercase;
       }
       
-    }
-    
-  }
-  
-}
-
-// Home Page Layout Styles:
-
-#HomePageLayout {
-  
-  .pagecomponent {
-    
-    .content-container {
-      padding: $spacer 0 $spacer-half;
     }
     
   }
@@ -65,20 +49,18 @@
 
 #Sidebar {
   
-  background-color: $gray-lighter;
-  
   .basecomponent {
     
     margin: $spacer 0;
     padding: $spacer;
-    border-radius: $spacer-half;
     background-color: $white;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     
-    > header h3 {
+    > header > h3 {
       color: $gray-light;
-      font-size: 1.3rem;
-      text-transform: lowercase;
+      font-size: 1.4rem;
+      font-weight: 300;
+      text-transform: uppercase;
     }
     
   }
@@ -90,6 +72,7 @@
 #Widgets {
   
   color: $gray;
+  padding-bottom: $spacer;
   background-color: $gray-lightish;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) inset;
   
@@ -97,19 +80,15 @@
     
     margin: $spacer 0 0;
     padding: $spacer;
-    border-radius: $spacer-half;
     background-color: $gray-lighter;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     
-    > header h3 {
-      font-size: 1.5rem;
-      text-transform: lowercase;
+    > header > h3 {
+      font-size: 1.6rem;
+      font-weight: 300;
+      text-transform: uppercase;
     }
     
-  }
-  
-  .column:last-child .basecomponent {
-    margin-bottom: $spacer;
   }
   
 }
@@ -120,6 +99,7 @@
   
   color: $white;
   padding: $spacer 0;
+  font-size: 0.9rem;
   background-color: $gray-light;
   
   a {

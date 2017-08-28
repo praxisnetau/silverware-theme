@@ -22,3 +22,30 @@ optgroup,
 textarea {
   font-family: inherit;
 }
+
+// Login Form Styles:
+
+#MemberLoginForm_LoginForm {
+  
+  div.actions {
+    margin: $spacer-half 0 0;
+  }
+  
+  #ForgotPassword {
+    
+    margin: $spacer 0 0;
+    
+    &:before {
+      color: $gray-lightish;
+      content: '\f071'; // fa-exclamation-triangle 
+      font-family: 'FontAwesome';
+      margin-right: $spacer-quarter;
+    }
+    
+    a {
+      color: $gray-light;
+    }
+    
+  }
+  
+}
