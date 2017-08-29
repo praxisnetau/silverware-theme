@@ -6,8 +6,8 @@
 
 The default theme for a SilverWare application, based upon:
 
-- [Webpack v2][webpack] (includes [dev server][webpack-dev-server])
-- [Bootstrap v4][bootstrap]
+- [Webpack v3][webpack] (includes [dev server][webpack-dev-server])
+- [Bootstrap v4][bootstrap] (now supports v4.0.0-beta)
 - [SilverStripe v4][silverstripe]
 - [Font Awesome][font-awesome]
 - [Modernizr][modernizr]
@@ -108,6 +108,6 @@ Please see [contributing](CONTRIBUTING.md) for more information.
 [webpack]: https://github.com/webpack/webpack
 [webpack-dev-server]: https://github.com/webpack/webpack-dev-server
 [font-awesome]: http://fontawesome.io
-[bootstrap]: https://v4-alpha.getbootstrap.com
+[bootstrap]: http://getbootstrap.com/
 [silverstripe]: https://github.com/silverstripe/silverstripe-framework
 [modernizr]: https://modernizr.com
