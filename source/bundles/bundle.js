@@ -5,6 +5,10 @@
 
 require('jquery');
 
+// Load Popper:
+
+require('popper');
+
 // Load Modernizr:
 
 require('modernizr');
@@ -24,4 +28,4 @@ require('jquery-loading-overlay');
 // Load jQuery Scripts:
 
 require('jquery/CustomFileField.js');
-require('jquery/LoadingOverlay.js')
+require('jquery/LoadingOverlay.js');

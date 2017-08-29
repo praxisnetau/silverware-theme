@@ -16,10 +16,10 @@ bootstrapCustomizations: ./source/styles/bootstrap
 # Webpack Style Loaders:
 
 styleLoaders:
-  - style-loader
-  - css-loader
-  - postcss-loader
-  - sass-loader
+  - style
+  - css?sourceMap
+  - postcss?sourceMap
+  - sass?sourceMap
 
 # Extract Styles to CSS File:
 
@@ -37,9 +37,8 @@ styles:
   
   mixins: true
   
-  # Reset and Print:
+  # Print and Reboot:
   
-  normalize: true
   print: true
   reboot: true
   
@@ -71,7 +70,6 @@ styles:
   navbar: true
   pagination: true
   progress: true
-  responsive-embed: true
   transitions: true
   
   # Components with Scripts:

@@ -1,6 +1,16 @@
 /* Form Styles
 ===================================================================================================================== */
 
+// Form Field Styles:
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-family: inherit;
+}
+
 // File Field Styles:
 
 .custom-file-control {
@@ -11,16 +21,6 @@
     content: "" !important;
   }
   
-}
-
-// Form Field Styles:
-
-input,
-button,
-select,
-optgroup,
-textarea {
-  font-family: inherit;
 }
 
 // Login Form Styles:
@@ -36,14 +36,14 @@ textarea {
     margin: $spacer 0 0;
     
     &:before {
-      color: $gray-lightish;
+      color: $gray-500;
       content: '\f071'; // fa-exclamation-triangle 
       font-family: 'FontAwesome';
       margin-right: $spacer-quarter;
     }
     
     a {
-      color: $gray-light;
+      color: $gray-600;
     }
     
   }

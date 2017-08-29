@@ -188,7 +188,7 @@ const plugins = (env, src, dist) => {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      Tether: 'tether',
+      Popper: 'popper.js',
       Modernizr: 'modernizr',
       Alert: 'exports-loader?Alert!bootstrap/js/dist/alert',
       Button: 'exports-loader?Button!bootstrap/js/dist/button',
@@ -260,6 +260,7 @@ const config = (env) => {
     resolve: {
       alias: {
         'jquery$': path.resolve(PATHS.MODULES, 'jquery/src/jquery'),
+        'popper$': path.resolve(PATHS.MODULES, 'popper.js'),
         'modernizr$': path.resolve(__dirname, '.modernizrrc'),
         'font-awesome$': path.resolve(PATHS.MODULES, 'font-awesome/scss/font-awesome.scss')
       },

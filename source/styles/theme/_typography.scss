@@ -79,7 +79,7 @@
     clear: both;
     margin: 0 $spacer $spacer;
     padding: 0 $spacer;
-    border-left: 2px solid $gray-lighter;
+    border-left: 2px solid $gray-200;
   }
   
   // List Styles:
@@ -147,7 +147,7 @@
   abbr[title] {
     cursor: help;
     text-decoration: none;
-    border-bottom: 1px dotted $gray-light;
+    border-bottom: 1px dotted $gray-600;
   }
   
   // Horizontal Rule Styles:
@@ -285,7 +285,7 @@
       
       p {
         clear: both;
-        color: $gray-light;
+        color: $gray-600;
         font-style: italic;
         margin: $spacer-half 0 $spacer;
       }
