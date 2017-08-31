@@ -188,7 +188,7 @@ const plugins = (env, src, dist) => {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      Popper: 'popper.js',
+      Popper: ['popper.js', 'default'],
       Modernizr: 'modernizr',
       Alert: 'exports-loader?Alert!bootstrap/js/dist/alert',
       Button: 'exports-loader?Button!bootstrap/js/dist/button',
