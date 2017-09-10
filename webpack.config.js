@@ -245,7 +245,8 @@ const plugins = (env, src, dist) => {
 const config = (env) => {
   return {
     entry: {
-      'bundle': entry(env, path.resolve(PATHS.BUNDLES, 'bundle.js')) // injects WDS/HMR stuff in dev mode
+      'bundle': entry(env, path.resolve(PATHS.BUNDLES, 'bundle.js')), // injects WDS/HMR stuff in dev mode
+      'editor': path.resolve(PATHS.BUNDLES, 'editor.js')
     },
     output: {
       path: PATHS.DIST,
