@@ -1,5 +1,5 @@
 <% if $Content %>
-  <div class="content">
+  <div class="$ContentClass">
     $Content
   </div>
 <% end_if %>
