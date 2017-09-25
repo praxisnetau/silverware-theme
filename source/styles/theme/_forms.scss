@@ -9,6 +9,11 @@ select,
 optgroup,
 textarea {
   font-family: inherit;
+  @if $enable-rounded {
+    border-radius: $input-border-radius;
+  } @else {
+    border-radius: 0;
+  }
 }
 
 // File Field Styles:
