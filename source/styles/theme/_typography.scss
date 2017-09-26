@@ -1,6 +1,20 @@
 /* Typography Styles
 ===================================================================================================================== */
 
+// Typography Sizes:
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: map-get($grid-breakpoints, md)) {
+  html {
+    font-size: 16px;
+  }
+}
+
+// Typography Styles:
+
 .typography {
   
   // Font Styles:
