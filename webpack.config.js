@@ -19,6 +19,7 @@ const PATHS = {
   DIST: path.resolve(__dirname, 'production'),
   BUNDLES: path.resolve(__dirname, 'source/bundles'),
   MODULES: path.resolve(__dirname, 'node_modules'),
+  COMBINED: path.resolve(process.env.PWD, '../../assets/_combinedfiles'),
   PUBLIC: '/themes/silverware-theme/production/'
 };
 
@@ -37,7 +38,9 @@ const DEV_SERVER_URL = `http://${DEV_SERVER.HOST}:${DEV_SERVER.PORT}`;
 
 const entry = (env, file) => {
   return (env === 'production') ? [
-    file
+    file,
+    /* 'combined-js', */
+    /* 'combined-css' */
   ] : [
     'webpack-dev-server/client?' + DEV_SERVER_URL,
     'webpack/hot/dev-server',
@@ -80,7 +83,10 @@ const rules = (env) => {
           loader: 'css-loader'
         },
         {
-          loader: 'postcss-loader'
+          loader: 'postcss-loader',
+          options: {
+            plugins: [ autoprefixer ] // see "browserslist" in package.json
+          }
         }
       ])
     },
@@ -91,7 +97,10 @@ const rules = (env) => {
           loader: 'css-loader'
         },
         {
-          loader: 'postcss-loader'
+          loader: 'postcss-loader',
+          options: {
+            plugins: [ autoprefixer ] // see "browserslist" in package.json
+          }
         },
         {
           loader: 'sass-loader'
@@ -215,8 +224,7 @@ const plugins = (env, src, dist) => {
         output: {
           path: PATHS.DIST
         },
-        context: PATHS.DIST,
-        postcss: [ autoprefixer ] // see "browserslist" in package.json
+        context: PATHS.DIST
       }
     }),
     new ExtractTextPlugin({
@@ -263,7 +271,9 @@ const config = (env) => {
         'jquery$': path.resolve(PATHS.MODULES, 'jquery/src/jquery'),
         'popper$': path.resolve(PATHS.MODULES, 'popper.js'),
         'modernizr$': path.resolve(__dirname, '.modernizrrc'),
-        'font-awesome$': path.resolve(PATHS.MODULES, 'font-awesome/scss/font-awesome.scss')
+        'font-awesome$': path.resolve(PATHS.MODULES, 'font-awesome/scss/font-awesome.scss'),
+        'combined-css$': path.resolve(PATHS.COMBINED, 'combined.css'),
+        'combined-js$': path.resolve(PATHS.COMBINED, 'combined.js')
       },
       modules: [
         PATHS.SRC,

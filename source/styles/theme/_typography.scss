@@ -4,13 +4,21 @@
 // Typography Sizes:
 
 html {
+  
+  // Small Screen Base Size:
+  
   font-size: 14px;
+  
 }
 
 @media (min-width: map-get($grid-breakpoints, md)) {
+  
+  // Large Screen Base Size:
+  
   html {
     font-size: 16px;
   }
+  
 }
 
 // Typography Styles:
@@ -177,10 +185,90 @@ html {
   // Image Styles:
   
   img {
-    
     height: auto;
     display: block;
     max-width: 100%;
+    margin: $spacer-half 0 $spacer;
+  }
+  
+  // Image Link Styles:
+  
+  .image, .captionImage {
+    
+    > a {
+      display: block;
+    }
+    
+  }
+  
+  // Caption Image Styles:
+  
+  .captionImage {
+    
+    max-width: 100%;
+    margin-top: $spacer;
+    margin-bottom: 0 !important;
+    
+    // Image Margins:
+    
+    img {
+      margin: 0;
+    }
+    
+    // Caption Text:
+    
+    p.caption, div.caption > p {
+      clear: both;
+      color: $gray-600;
+      text-align: left;
+      font-style: italic;
+      margin: $spacer-half 0 $spacer;
+    }
+    
+  }
+  
+  // Font Awesome Styles:
+  
+  .fa {
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  .fa-ul {
+    
+    margin: 0 0 $spacer 0;
+    padding: 0 0 0 $spacer-double;
+    list-style: none;
+    
+    .fa-ul {
+      margin-bottom: 0;
+    }
+    
+  }
+  
+  .fa-li {
+    top: 0;
+    left: (-$spacer-double);
+    width: $spacer-double;
+    line-height: $line-height-base;
+  }
+  
+  // Code Direction Styles (for obfuscating email addresses):
+  
+  .codedirection {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  
+}
+
+// Media Queries:
+
+@media (min-width: map-get($grid-breakpoints, md)) {
+  
+  // Image Styles:
+  
+  img {
     
     // Left Aligned:
     
@@ -220,19 +308,13 @@ html {
   
   .captionImage {
     
-    max-width: 100%;
-    margin-top: $spacer;
-    
     // Left Aligned:
     
     &.left {
       
       float: left;
+      max-width: 50%;
       margin: $spacer-half $spacer-double 0 0;
-      
-      &[style] {
-        max-width: 50%;
-      }
       
       img {
         float: none;
@@ -247,11 +329,8 @@ html {
     &.right {
       
       float: right;
+      max-width: 50%;
       margin: $spacer-half 0 0 $spacer-double;
-      
-      &[style] {
-        max-width: 50%;
-      }
       
       img {
         float: none;
@@ -271,7 +350,7 @@ html {
         margin: 0 auto;
       }
       
-      .caption {
+      p.caption, div.caption > p {
         text-align: center;
       }
       
@@ -281,68 +360,20 @@ html {
     
     &.leftAlone {
       
-      margin: $spacer 0 0;
+      display: table;
       
       img {
         float: none;
+        display: table-row;
+      }
+      
+      p.caption, div.caption {
+        display: table-caption;
+        caption-side: bottom;
       }
       
     }
     
-    // Image Margins:
-    
-    img {
-      margin: 0;
-    }
-    
-    // Caption Text:
-    
-    .caption {
-      
-      text-align: left;
-      
-      p {
-        clear: both;
-        color: $gray-600;
-        font-style: italic;
-        margin: $spacer-half 0 $spacer;
-      }
-      
-    }
-    
-  }
-  
-  // Font Awesome Styles:
-  
-  .fa {
-    font-style: normal;
-    font-weight: normal;
-  }
-  
-  .fa-ul {
-    
-    margin: 0 0 $spacer 0;
-    padding: 0 0 0 $spacer-double;
-    list-style: none;
-    
-    .fa-ul {
-      margin-bottom: 0;
-    }
-    
-  }
-  
-  .fa-li {
-    top: 0;
-    left: (-$spacer-double);
-    width: $spacer-double;
-    line-height: $line-height-base;
-  }
-  
-  // Code Direction Styles (for obfuscating email addresses):
-  
-  .codedirection {
-    unicode-bidi: bidi-override;
-    direction: rtl;
   }
   
 }
