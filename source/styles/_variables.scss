@@ -1,7 +1,7 @@
 /* SilverWare Theme Variables
 ===================================================================================================================== */
 
-// Load Bootstrap Functions:
+// Import Bootstrap Functions:
 
 @import "~bootstrap/scss/functions";
 
@@ -9,11 +9,12 @@
 
 $spacer: 1rem;
 
-$spacer-quarter: ($spacer * .25);
-$spacer-half:    ($spacer * .5);
+$spacer-quarter: ($spacer * 0.25);
+$spacer-half:    ($spacer * 0.5);
 $spacer-ample:   ($spacer * 1.5);
 $spacer-double:  ($spacer * 2);
 $spacer-triple:  ($spacer * 3);
+$spacer-quad:    ($spacer * 4);
 
 $spacers: (
   0: 0,
@@ -21,7 +22,8 @@ $spacers: (
   2: $spacer-half,
   3: $spacer,
   4: $spacer-ample,
-  5: $spacer-triple
+  5: $spacer-triple,
+  6: $spacer-quad
 );
 
 $sizes: (
@@ -48,13 +50,12 @@ $container-max-widths: (
   xl: 1140px
 );
 
-$grid-columns: 12;
+$grid-columns:      12;
 $grid-gutter-width: 30px;
 
-// Colors:
+// Grays:
 
-$black: #000;
-$white: #fff;
+$white:    #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -64,6 +65,7 @@ $gray-600: #868e96;
 $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
+$black:    #000;
 
 $grays: (
   100: $gray-100,
@@ -76,6 +78,8 @@ $grays: (
   800: $gray-800,
   900: $gray-900
 );
+
+// Colors:
 
 $bondi:   #139fda;
 $blue:    #007bff;
@@ -118,6 +122,17 @@ $theme-colors: (
 
 $theme-color-interval: 8%;
 
+// Options:
+
+$enable-caret:             true;
+$enable-rounded:           false;
+$enable-shadows:           false;
+$enable-gradients:         false;
+$enable-transitions:       true;
+$enable-hover-media-query: false;
+$enable-grid-classes:      true;
+$enable-print-styles:      true;
+
 // Fonts:
 
 $font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif;
@@ -127,19 +142,19 @@ $font-family-base:       $font-family-sans-serif;
 
 $font-size-base: 1rem;
 
-$font-size-lg: 1.25rem;
-$font-size-sm: .875rem;
+$font-size-lg: ($font-size-base * 1.25);
+$font-size-sm: ($font-size-base * 0.875);
 
-$font-size-h1: 2.5rem;
-$font-size-h2: 2rem;
-$font-size-h3: 1.75rem;
-$font-size-h4: 1.5rem;
-$font-size-h5: 1.25rem;
-$font-size-h6: 1rem;
+$font-size-h1: ($font-size-base * 2.5);
+$font-size-h2: ($font-size-base * 2);
+$font-size-h3: ($font-size-base * 1.75);
+$font-size-h4: ($font-size-base * 1.5);
+$font-size-h5: ($font-size-base * 1.25);
+$font-size-h6: $font-size-base;
 
 $font-weight-light:  300;
-$font-weight-normal: normal;
-$font-weight-bold:   bold;
+$font-weight-normal: 400;
+$font-weight-bold:   700;
 
 $line-height-lg: 1.5;
 $line-height-sm: 1.5;
@@ -147,30 +162,58 @@ $line-height-sm: 1.5;
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.6;
 
+// Body:
+
+$body-bg:    $white;
+$body-color: $gray-900;
+
 // Borders:
 
 $border-width: 1px;
 $border-color: $gray-200;
 
-$border-radius:    .25rem;
-$border-radius-lg: .3rem;
-$border-radius-sm: .2rem;
+$border-radius:    0.25rem;
+$border-radius-lg: 0.3rem;
+$border-radius-sm: 0.2rem;
+
+// Breadcrumbs:
+
+$breadcrumb-padding-y:     0.75rem;
+$breadcrumb-padding-x:     1rem;
+$breadcrumb-item-padding:  0.5rem;
+$breadcrumb-margin-bottom: 1rem;
+
+$breadcrumb-bg:            $gray-200;
+$breadcrumb-divider-color: $gray-600;
+$breadcrumb-active-color:  $gray-600;
+$breadcrumb-divider:       "/";
+
+// Caret:
+
+$caret-width: 0.3em;
+
+// Carousel
+
+$carousel-control-color:   $white;
+$carousel-control-width:   15%;
+$carousel-control-opacity: 0.5;
+
+$carousel-indicator-width:     30px;
+$carousel-indicator-height:    3px;
+$carousel-indicator-spacer:    3px;
+$carousel-indicator-active-bg: $white;
+
+$carousel-caption-width: 70%;
+$carousel-caption-color: $white;
+
+$carousel-control-icon-width: 20px;
+
+$carousel-transition: transform 0.6s ease;
 
 // Components:
 
 $component-active-color: $white;
 $component-active-bg:    theme-color("primary");
-
-$caret-width: .3em;
-
-$transition-base:     all .2s ease-in-out;
-$transition-fade:     opacity .15s linear;
-$transition-collapse: height .35s ease;
-
-// Body:
-
-$body-bg:    $white;
-$body-color: $gray-900;
 
 // Headings:
 
@@ -181,10 +224,6 @@ $headings-font-family: inherit;
 
 $headings-font-weight: 500;
 $headings-line-height: 1.4;
-
-// Paragraphs:
-
-$paragraph-margin-bottom: $spacer;
 
 // Links:
 
@@ -198,18 +237,18 @@ $link-hover-decoration: underline;
 $ul-style-type: square;
 $ol-style-type: decimal;
 
-// Options:
-
-$enable-rounded:           false;
-$enable-shadows:           false;
-$enable-gradients:         false;
-$enable-transitions:       true;
-$enable-hover-media-query: false;
-$enable-grid-classes:      true;
-$enable-print-styles:      true;
-
 // Loading:
 
 $loading-overlay-color-background:  rgba(255, 255, 255, 0.75);
 $loading-overlay-color-foreground:  rgba(0, 0, 0, 0.5);
 $loading-overlay-spinner-font-size: 3rem;
+
+// Paragraphs:
+
+$paragraph-margin-bottom: $spacer;
+
+// Transitions:
+
+$transition-base:     all 0.2s ease-in-out;
+$transition-fade:     opacity 0.15s linear;
+$transition-collapse: height 0.35s ease;

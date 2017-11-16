@@ -7,7 +7,7 @@
 The default theme for a SilverWare application, based upon:
 
 - [Webpack v3][webpack] (includes [dev server][webpack-dev-server])
-- [Bootstrap v4][bootstrap] (now supports v4.0.0-beta)
+- [Bootstrap v4][bootstrap] (now supports v4.0.0-beta.2)
 - [SilverStripe v4][silverstripe]
 - [Font Awesome][font-awesome]
 - [Modernizr][modernizr]
