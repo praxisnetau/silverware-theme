@@ -5,7 +5,6 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 // Load Plugin Modules:
 
@@ -83,10 +82,7 @@ const rules = (env) => {
           loader: 'css-loader'
         },
         {
-          loader: 'postcss-loader',
-          options: {
-            plugins: [ autoprefixer ] // see "browserslist" in package.json
-          }
+          loader: 'postcss-loader'
         }
       ])
     },
@@ -97,10 +93,7 @@ const rules = (env) => {
           loader: 'css-loader'
         },
         {
-          loader: 'postcss-loader',
-          options: {
-            plugins: [ autoprefixer ] // see "browserslist" in package.json
-          }
+          loader: 'postcss-loader'
         },
         {
           loader: 'sass-loader'
