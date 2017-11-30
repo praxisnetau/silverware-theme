@@ -30,7 +30,8 @@
   "scripts": {
     "start": "node webpack.server.js",
     "watch": "webpack --env.development --colors --watch",
-    "build": "webpack --env.production --colors --optimize-minimize"
+    "build": "webpack --env.production --colors --optimize-minimize",
+    "merge": "webpack --env.production --env.combine --colors --optimize-minimize"
   },
   "dependencies": {
     "jquery": "^3.2.1",
@@ -53,16 +54,16 @@
     "json-loader": "^0.5.7",
     "modernizr": "^3.5.0",
     "modernizr-loader": "^1.0.1",
-    "node-sass": "^4.6.1",
-    "postcss-loader": "^2.0.8",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.0.9",
     "resolve-url-loader": "^2.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "svgo": "^1.0.3",
-    "svgo-loader": "^2.0.0",
+    "svgo-loader": "^2.1.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4",
+    "webpack-dev-server": "^2.9.5",
     "webpack-module-hot-accept": "^1.0.5",
     "yaml-loader": "^0.5.0"
   },

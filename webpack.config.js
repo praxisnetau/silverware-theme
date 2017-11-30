@@ -35,16 +35,21 @@ const DEV_SERVER_URL = `http://${DEV_SERVER.HOST}:${DEV_SERVER.PORT}`;
 
 // Configure Entry:
 
-const entry = (env, file) => {
-  return (env === 'production') ? [
-    file,
-    /* 'combined-js', */
-    /* 'combined-css' */
+const entry = (env, combine, file) => {
+  var files = (env === 'production') ? [
+    file
   ] : [
     'webpack-dev-server/client?' + DEV_SERVER_URL,
     'webpack/hot/dev-server',
     file
   ];
+  if (combine) {
+    files.push(
+      'combined-css',
+      'combined-js'
+    );
+  }
+  return files;
 };
 
 // Configure Style Loader:
@@ -82,7 +87,12 @@ const rules = (env) => {
           loader: 'css-loader'
         },
         {
-          loader: 'postcss-loader'
+          loader: 'postcss-loader',
+          options: {
+            config: {
+              path: './postcss.config.js'
+            }
+          }
         }
       ])
     },
@@ -93,7 +103,12 @@ const rules = (env) => {
           loader: 'css-loader'
         },
         {
-          loader: 'postcss-loader'
+          loader: 'postcss-loader',
+          options: {
+            config: {
+              path: './postcss.config.js'
+            }
+          }
         },
         {
           loader: 'sass-loader'
@@ -243,10 +258,10 @@ const plugins = (env, src, dist) => {
 
 // Define Configuration:
 
-const config = (env) => {
+const config = (env, combine) => {
   return {
     entry: {
-      'bundle': entry(env, path.resolve(PATHS.BUNDLES, 'bundle.js')), // injects WDS/HMR stuff in dev mode
+      'bundle': entry(env, combine, path.resolve(PATHS.BUNDLES, 'bundle.js')), // injects WDS/HMR stuff in dev mode
       'editor': path.resolve(PATHS.BUNDLES, 'editor.js')
     },
     output: {
@@ -282,8 +297,8 @@ const config = (env) => {
 
 // Define Module Exports:
 
-module.exports = (env = {development: true}) => {
+module.exports = (env = {development: true, combine: false}) => {
   process.env.NODE_ENV = (env.production ? 'production' : 'development');
   console.log(`Running in ${process.env.NODE_ENV} mode...`);
-  return config(process.env.NODE_ENV);
+  return config(process.env.NODE_ENV, env.combine);
 };
