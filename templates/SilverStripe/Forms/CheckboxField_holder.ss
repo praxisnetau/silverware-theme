@@ -3,7 +3,7 @@
     $Field
     $Title
   </label>
-  <% if $Message %><div class="form-control-feedback message $MessageType">$Message</div><% end_if %>
+  <% if $Message %><div class="invalid-feedback message $MessageType">$Message</div><% end_if %>
   <% if $RightTitle %><div class="form-text text-muted right-title">$RightTitle</div><% end_if %>
   <% if $Description %><small class="form-text text-muted description">$Description</small><% end_if %>
 </div>
