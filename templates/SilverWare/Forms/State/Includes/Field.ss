@@ -1,1 +1,1 @@
-<% if $Type == 'good' %> form-control-success<% else_if $Type == 'warning' %> form-control-warning<% else_if $Type == 'error' %> form-control-danger<% end_if %>
+<% if $Type %><% if $Type == 'good' %> is-valid<% else %> is-invalid<% end_if %><% end_if %>
