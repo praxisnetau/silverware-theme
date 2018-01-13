@@ -7,7 +7,7 @@
 The default theme for a SilverWare application, based upon:
 
 - [Webpack v3][webpack] (includes [dev server][webpack-dev-server])
-- [Bootstrap v4][bootstrap] (now supports v4.0.0-beta.2)
+- [Bootstrap v4][bootstrap] (now supports v4.0.0-beta.3)
 - [SilverStripe v4][silverstripe]
 - [Font Awesome][font-awesome]
 - [Modernizr][modernizr]
@@ -18,7 +18,6 @@ The default theme for a SilverWare application, based upon:
 - [Installation](#installation)
 - [Usage](#usage)
 - [Issues](#issues)
-- [To-Do](#to-do)
 - [Contribution](#contribution)
 - [Attribution](#attribution)
 - [Maintainers](#maintainers)
@@ -50,7 +49,7 @@ $ yarn start
 ```
 
 The theme should now compile with hot module reloading enabled, allowing the browser to automatically reload
-and update your styles as you make changes to the theme SASS.
+and update your styles as you make changes to the theme Sass.
 
 To prepare your theme for production, execute the following:
 
@@ -65,17 +64,13 @@ To use this theme with your SilverWare application, you will need to configure `
 ```yaml
 SilverStripe\View\SSViewer:
   themes:
-    - silverware-theme
+    - 'silverware-theme'
     - '$default'
 ```
 
 ## Issues
 
 Please use the [GitHub issue tracker][issues] for bug reports and feature requests.
-
-## To-Do
-
-- Improve bundled SASS
 
 ## Contribution
 
