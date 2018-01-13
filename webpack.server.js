@@ -1,43 +1,70 @@
-/* Webpack Development Server Configuration
+/* Webpack Server Configuration
 ===================================================================================================================== */
 
-// Load Core Modules:
+// Load Core:
 
-const path = require('path');
+const fs      = require('fs');
 const webpack = require('webpack');
 
-// Load Webpack Configuration:
-
-const config = require(path.resolve(__dirname, 'webpack.config.js'))({development: true});
-
-// Load Development Server Module:
+// Load Server:
 
 const WebpackDevServer = require('webpack-dev-server');
 
-// Create Development Server Instance:
+// Load Config:
 
-const server = new WebpackDevServer(
-  webpack(config), {
-    hot: true,
-    filename: config.output.filename,
-    publicPath: config.output.publicPath,
-    stats: {
-      colors: true
-    },
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    }
-  }
-);
+const config = require('./webpack.config.js')();
 
-// Obtain Host and Port:
+// Define Server:
 
-const host = config.devServer.host;
-const port = config.devServer.port;
+const SERVER = {
+  HOST: 'localhost',
+  PORT: 8080,
+  HTTPS: false
+};
+
+// Define Server Protocol:
+
+const SERVER_PROTOCOL = SERVER.HTTPS ? 'https' : 'http';
+
+// Define Server URL:
+
+const SERVER_URL = `${SERVER_PROTOCOL}://${SERVER.HOST}:${SERVER.PORT}`;
+
+// Define Options:
+
+const options = {
+  hot: true,
+  host: SERVER.HOST,
+  port: SERVER.PORT,
+  https: SERVER.HTTPS,
+  stats: {
+    colors: true
+  },
+  headers: {
+    'Access-Control-Allow-Origin': '*'
+  },
+  publicPath: `${SERVER_URL}/production`
+};
+
+// Override Output Public Path:
+
+config.output.publicPath = options.publicPath;
+
+// Add Entrypoints:
+
+WebpackDevServer.addDevServerEntrypoints(config, options);
+
+// Create Compiler Instance:
+
+const compiler = webpack(config);
+
+// Create Server Instance:
+
+const server = new WebpackDevServer(compiler, options);
 
 // Begin Listening:
 
-server.listen(port, host, (err) => {
-  if (err) return console.log(err);
-  console.log(`Development server listening on ${host}:${port}...`);
+server.listen(port = SERVER.PORT, host = SERVER.HOST, (error) => {
+  if (error) return console.log(error);
+  console.log(`Development server listening on ${SERVER_URL}...`);
 });

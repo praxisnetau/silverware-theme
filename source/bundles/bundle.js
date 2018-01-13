@@ -1,25 +1,17 @@
 /* SilverWare Theme Bundle
 ===================================================================================================================== */
 
-// Load jQuery:
-
-require('jquery');
-
-// Load Popper:
-
-require('popper');
-
 // Load Modernizr:
 
 require('modernizr');
 
+// Load Bootstrap:
+
+require('bootstrap');
+
 // Load Font Awesome:
 
 require('font-awesome');
-
-// Load Bootstrap:
-
-require('bootstrap-loader');
 
 // Load jQuery Loading Overlay:
 
