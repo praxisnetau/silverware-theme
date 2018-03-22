@@ -125,14 +125,15 @@ $theme-color-interval: 8%;
 
 // Options:
 
-$enable-caret:             true;
-$enable-rounded:           false;
-$enable-shadows:           false;
-$enable-gradients:         false;
-$enable-transitions:       true;
-$enable-hover-media-query: false;
-$enable-grid-classes:      true;
-$enable-print-styles:      true;
+$enable-caret:               true;
+$enable-rounded:             false;
+$enable-shadows:             false;
+$enable-gradients:           false;
+$enable-transitions:         true;
+$enable-hover-media-query:   false;
+$enable-grid-classes:        true;
+$enable-print-styles:        true;
+$enable-required-indicators: true;
 
 // Fonts:
 
@@ -215,6 +216,11 @@ $carousel-transition: transform 0.6s ease;
 
 $component-active-color: $white;
 $component-active-bg:    theme-color("primary");
+
+// Forms:
+
+$form-required-color: $red;
+$form-required-content: ' *';
 
 // Headings:
 
