@@ -29,17 +29,21 @@ html {
   
   a {
     
+    &.btn:hover,
+    &.page-link:hover {
+      text-decoration: none;
+    }
+    
+  }
+  
+  a:not(.btn, .page-link) {
+    
     color: $typography-link-color;
     text-decoration: $typography-link-decoration;
     
     &:hover {
       color: $typography-link-hover-color;
       text-decoration: $typography-link-hover-decoration;
-    }
-    
-    &.btn:hover,
-    &.page-link:hover {
-      text-decoration: none;
     }
     
   }
