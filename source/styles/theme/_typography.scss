@@ -7,16 +7,12 @@ html {
   
   // Small Screen Base Size:
   
-  font-size: 14px;
-  
-}
-
-@media (min-width: map-get($grid-breakpoints, md)) {
+  font-size: $typography-font-size-xs;
   
   // Medium Screen Base Size:
   
-  html {
-    font-size: 16px;
+  @include media-breakpoint-up(md) {
+    font-size: $typography-font-size-md;
   }
   
 }
@@ -33,10 +29,12 @@ html {
   
   a {
     
-    text-decoration: none;
+    color: $typography-link-color;
+    text-decoration: $typography-link-decoration;
     
     &:hover {
-      text-decoration: underline;
+      color: $typography-link-hover-color;
+      text-decoration: $typography-link-hover-decoration;
     }
     
     &.btn:hover,
@@ -46,6 +44,32 @@ html {
     
   }
   
+  // Heading Styles:
+  
+  h1 {
+    color: $typography-h1-color;
+  }
+  
+  h2 {
+    color: $typography-h2-color;
+  }
+  
+  h3 {
+    color: $typography-h3-color;
+  }
+  
+  h4 {
+    color: $typography-h4-color;
+  }
+  
+  h5 {
+    color: $typography-h5-color;
+  }
+  
+  h6 {
+    color: $typography-h6-color;
+  }
+  
   // Formatting Styles:
   
   i, em {
@@ -53,7 +77,7 @@ html {
   }
   
   b, strong {
-    font-weight: $font-weight-bold;
+    font-weight: $typography-strong-font-weight;
   }
   
   // Alignment Styles:
@@ -105,7 +129,7 @@ html {
     clear: both;
     margin: 0 $spacer $spacer;
     padding: 0 $spacer;
-    border-left: 2px solid $gray-200;
+    border-left: $typography-blockquote-border-width solid $typography-blockquote-border-color;
   }
   
   // List Styles:
@@ -159,7 +183,7 @@ html {
   dl {
     
     dt {
-      font-weight: $font-weight-bold;
+      font-weight: $typography-dt-font-weight;
     }
     
     dd {
@@ -185,10 +209,48 @@ html {
   // Image Styles:
   
   img {
+    
     height: auto;
     display: block;
     max-width: 100%;
     margin: $spacer-half 0 $spacer;
+    
+    @include media-breakpoint-up(md) {
+      
+      // Left Aligned:
+      
+      &.left {
+        float: left;
+        max-width: 50%;
+        margin: $spacer-half $spacer-double $spacer 0;
+      }
+      
+      // Right Aligned:
+      
+      &.right {
+        float: right;
+        max-width: 50%;
+        margin: $spacer-half 0 $spacer $spacer-double;
+      }
+      
+      // Centered:
+      
+      &.center {
+        float: none;
+        clear: both;
+        margin: $spacer-half auto $spacer;
+      }
+      
+      // Left Alone:
+      
+      &.leftAlone {
+        float: left;
+        clear: both;
+        margin: 0 100% $spacer 0;
+      }
+      
+    }
+    
   }
   
   // Image Link Styles:
@@ -225,6 +287,76 @@ html {
       margin: $spacer-half 0 $spacer;
     }
     
+    @include media-breakpoint-up(md) {
+      
+      // Left Aligned:
+      
+      &.left {
+        
+        float: left;
+        max-width: 50%;
+        margin: $spacer-half $spacer-double 0 0;
+        
+        img {
+          float: none;
+          width: 100%;
+          max-width: none;
+        }
+        
+      }
+      
+      // Right Aligned:
+      
+      &.right {
+        
+        float: right;
+        max-width: 50%;
+        margin: $spacer-half 0 0 $spacer-double;
+        
+        img {
+          float: none;
+          width: 100%;
+          max-width: none;
+        }
+        
+      }
+      
+      // Centered:
+      
+      &.center {
+        
+        margin: $spacer auto 0;
+        
+        img {
+          margin: 0 auto;
+        }
+        
+        p.caption, div.caption > p {
+          text-align: center;
+        }
+        
+      }
+      
+      // Left Alone:
+      
+      &.leftAlone {
+        
+        display: table;
+        
+        img {
+          float: none;
+          display: table-row;
+        }
+        
+        p.caption, div.caption {
+          display: table-caption;
+          caption-side: bottom;
+        }
+        
+      }
+      
+    }
+    
   }
   
   // Font Awesome Styles:
@@ -258,122 +390,6 @@ html {
   .codedirection {
     unicode-bidi: bidi-override;
     direction: rtl;
-  }
-  
-}
-
-// Media Queries:
-
-@media (min-width: map-get($grid-breakpoints, md)) {
-  
-  // Image Styles:
-  
-  img {
-    
-    // Left Aligned:
-    
-    &.left {
-      float: left;
-      max-width: 50%;
-      margin: $spacer-half $spacer-double $spacer 0;
-    }
-    
-    // Right Aligned:
-    
-    &.right {
-      float: right;
-      max-width: 50%;
-      margin: $spacer-half 0 $spacer $spacer-double;
-    }
-    
-    // Centered:
-    
-    &.center {
-      float: none;
-      clear: both;
-      margin: $spacer-half auto $spacer;
-    }
-    
-    // Left Alone:
-    
-    &.leftAlone {
-      float: left;
-      clear: both;
-      margin: 0 100% $spacer 0;
-    }
-    
-  }
-  
-  // Caption Image Styles:
-  
-  .captionImage {
-    
-    // Left Aligned:
-    
-    &.left {
-      
-      float: left;
-      max-width: 50%;
-      margin: $spacer-half $spacer-double 0 0;
-      
-      img {
-        float: none;
-        width: 100%;
-        max-width: none;
-      }
-      
-    }
-    
-    // Right Aligned:
-    
-    &.right {
-      
-      float: right;
-      max-width: 50%;
-      margin: $spacer-half 0 0 $spacer-double;
-      
-      img {
-        float: none;
-        width: 100%;
-        max-width: none;
-      }
-      
-    }
-    
-    // Centered:
-    
-    &.center {
-      
-      margin: $spacer auto 0;
-      
-      img {
-        margin: 0 auto;
-      }
-      
-      p.caption, div.caption > p {
-        text-align: center;
-      }
-      
-    }
-    
-    // Left Alone:
-    
-    &.leftAlone {
-      
-      display: table;
-      
-      img {
-        float: none;
-        display: table-row;
-      }
-      
-      p.caption, div.caption {
-        display: table-caption;
-        caption-side: bottom;
-      }
-      
-    }
-    
   }
   
 }

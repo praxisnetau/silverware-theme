@@ -8,22 +8,99 @@ button,
 select,
 optgroup,
 textarea {
+  
   font-family: inherit;
+  
   @if $enable-rounded {
     border-radius: $input-border-radius;
   } @else {
     border-radius: 0;
   }
+  
+}
+
+// Form Required Styles:
+
+form {
+  
+  span.required { // typically used in literal fields
+    color: $form-required-color;
+  }
+  
+  @if $enable-required-indicators {
+    
+    .field.required > label {
+      
+      &:after {
+        color: $form-required-color;
+        content: $form-required-content;
+      }
+      
+    }
+    
+  }
+  
+}
+
+// Optionset Field Styles:
+
+form {
+  
+  .field.optionset {
+    
+    &.has-valid {
+      
+      label {
+        color: theme-color("success");
+      }
+      
+    }
+    
+    &.has-invalid {
+      
+      label {
+        color: theme-color("danger");
+      }
+      
+      .invalid-feedback {
+        display: block;
+      }
+      
+    }
+    
+  }
+  
+}
+
+// Checkbox Field Styles:
+
+form {
+  
+  .field.form-check {
+    margin-bottom: $spacer;
+  }
+  
 }
 
 // File Field Styles:
 
-.custom-file-control {
+form {
   
-  overflow: hidden;
-  
-  &.selected:lang(en)::after {
-    content: "" !important;
+  .field.file {
+    
+    .custom-file-label {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    
+    &.has-invalid {
+      
+      .invalid-feedback {
+        display: block;
+      }
+      
+    }
+    
   }
   
 }
