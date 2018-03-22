@@ -1,9 +1,10 @@
 /* SilverWare Theme Variables
 ===================================================================================================================== */
 
-// Import Bootstrap Functions:
+// Import Bootstrap Functions + Mixins:
 
 @import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
 
 // Spacers and Sizes:
 
@@ -81,7 +82,6 @@ $grays: (
 
 // Colors:
 
-$bondi:   #139fda;
 $blue:    #007bff;
 $indigo:  #6610f2;
 $purple:  #6f42c1;
@@ -93,8 +93,9 @@ $green:   #28a745;
 $teal:    #20c997;
 $cyan:    #17a2b8;
 
+$bondi:   #139fda;
+
 $colors: (
-  bondi: $bondi,
   blue: $blue,
   indigo: $indigo,
   purple: $purple,
@@ -107,18 +108,30 @@ $colors: (
   cyan: $cyan,
   white: $white,
   gray: $gray-600,
-  gray-dark: $gray-800
+  gray-dark: $gray-800,
+  bondi: $bondi
 );
 
+// Theme Colors:
+
+$primary:       $bondi;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
 $theme-colors: (
-  primary: $bondi,
-  secondary: $gray-600,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  danger: $danger,
+  light: $light,
+  dark: $dark
 );
 
 $theme-color-interval: 8%;
@@ -130,22 +143,24 @@ $enable-rounded:             false;
 $enable-shadows:             false;
 $enable-gradients:           false;
 $enable-transitions:         true;
-$enable-hover-media-query:   false;
 $enable-grid-classes:        true;
 $enable-print-styles:        true;
+$enable-hover-media-query:   false;
 $enable-required-indicators: true;
 
 // Fonts:
 
-$font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-serif:      Georgia, "Noto Serif", "Liberation Serif", "Times New Roman", Times, serif;
+$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Noto Mono", "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif;
 
 $font-size-base: 1rem;
 
+$font-size-xl: ($font-size-base * 1.5);
 $font-size-lg: ($font-size-base * 1.25);
 $font-size-sm: ($font-size-base * 0.875);
+$font-size-xs: ($font-size-base * 0.8);
 
 $h1-font-size: ($font-size-base * 2.5);
 $h2-font-size: ($font-size-base * 2);
@@ -156,6 +171,7 @@ $h6-font-size: $font-size-base;
 
 $font-weight-light:  300;
 $font-weight-normal: 400;
+$font-weight-medium: 500;
 $font-weight-bold:   700;
 
 $line-height-lg: 1.5;
@@ -167,7 +183,7 @@ $line-height-base: 1.6;
 // Body:
 
 $body-bg:    $white;
-$body-color: $gray-900;
+$body-color: $gray-800;
 
 // Borders:
 
@@ -217,10 +233,45 @@ $carousel-transition: transform 0.6s ease;
 $component-active-color: $white;
 $component-active-bg:    theme-color("primary");
 
+// Dropdowns:
+
+$dropdown-min-width:                10rem;
+$dropdown-padding-y:                0.5rem;
+$dropdown-spacer:                   0.125rem;
+$dropdown-bg:                       $white;
+$dropdown-border-color:             rgba($black, 0.15);
+$dropdown-border-radius:            $border-radius;
+$dropdown-border-width:             $border-width;
+$dropdown-divider-bg:               $gray-200;
+$dropdown-box-shadow:               0 0.5rem 1rem rgba($black, 0.175);
+
+$dropdown-link-color:               $gray-900;
+$dropdown-link-hover-color:         darken($gray-900, 5%);
+$dropdown-link-hover-bg:            $gray-200;
+$dropdown-link-active-color:        $component-active-color;
+$dropdown-link-active-bg:           $component-active-bg;
+$dropdown-link-disabled-color:      $gray-600;
+
+$dropdown-item-padding-y:           0.25rem;
+$dropdown-item-padding-x:           1.5rem;
+
+$dropdown-header-color:             $gray-600;
+
+// Footer:
+
+$footer-bg:        $gray-700;
+$footer-color:     $white;
+$footer-font-size: $font-size-sm;
+
 // Forms:
 
 $form-required-color: $red;
 $form-required-content: ' *';
+
+// Header:
+
+$header-bg:    $bondi;
+$header-color: $white;
 
 // Headings:
 
@@ -231,6 +282,10 @@ $headings-font-family: inherit;
 
 $headings-font-weight: 500;
 $headings-line-height: 1.4;
+
+// Layout:
+
+$layout-bg: $gray-200;
 
 // Links:
 
@@ -250,12 +305,66 @@ $loading-overlay-color-background:  rgba(255, 255, 255, 0.75);
 $loading-overlay-color-foreground:  rgba(0, 0, 0, 0.5);
 $loading-overlay-spinner-font-size: 3rem;
 
+// Page:
+
+$page-heading-color:       $gray-600;
+$page-heading-font-weight: $font-weight-light;
+
+$page-layout-bg: $white;
+
 // Paragraphs:
 
 $paragraph-margin-bottom: $spacer;
+
+// Sidebar:
+
+$sidebar-bg:                  transparent;
+$sidebar-color:               $gray-700;
+$sidebar-heading-color:       $gray-600;
+$sidebar-heading-font-size:   $font-size-lg;
+$sidebar-heading-font-weight: $font-weight-light;
+$sidebar-content-font-size:   $font-size-sm;
+$sidebar-component-bg:        $white;
+$sidebar-component-shadow:    2px 2px 10px rgba($black, 0.1);
 
 // Transitions:
 
 $transition-base:     all 0.2s ease-in-out;
 $transition-fade:     opacity 0.15s linear;
 $transition-collapse: height 0.35s ease;
+
+// Typography:
+
+$typography-font-size-xs: 14px;
+$typography-font-size-md: 16px;
+
+$typography-h1-color: $headings-color;
+$typography-h2-color: $headings-color;
+$typography-h3-color: $headings-color;
+$typography-h4-color: $headings-color;
+$typography-h5-color: $headings-color;
+$typography-h6-color: $headings-color;
+
+$typography-link-color:            $link-color;
+$typography-link-decoration:       $link-decoration;
+$typography-link-hover-color:      darken($typography-link-color, 15%);
+$typography-link-hover-decoration: $link-hover-decoration;
+
+$typography-strong-font-weight: $font-weight-bold;
+
+$typography-blockquote-border-color: $gray-200;
+$typography-blockquote-border-width: 2px;
+
+$typography-dt-font-weight: $font-weight-bold;
+
+// Widgets:
+
+$widgets-bg:                  $gray-500;
+$widgets-color:               $gray-700;
+$widgets-shadow:              2px 2px 10px rgba($black, 0.2) inset;
+$widgets-heading-color:       $gray-600;
+$widgets-heading-font-size:   $font-size-xl;
+$widgets-heading-font-weight: $font-weight-light;
+$widgets-content-font-size:   $font-size-sm;
+$widgets-component-bg:        $gray-200;
+$widgets-component-shadow:    2px 2px 10px rgba($black, 0.1);

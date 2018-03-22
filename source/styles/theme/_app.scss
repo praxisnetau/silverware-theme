@@ -4,14 +4,14 @@
 // Header Styles:
 
 #Header {
-  color: $white;
-  background-color: theme-color("primary");
+  color: $header-color;
+  background-color: $header-bg;
 }
 
 // Layout Styles:
 
 #Layout {
-  background-color: $gray-200;
+  background-color: $layout-bg;
 }
 
 // Crumb Styles:
@@ -24,21 +24,21 @@
 
 #PageLayout,
 #HomePageLayout {
+  background-color: $page-layout-bg;
+}
+
+// Page Component Styles:
+
+.pagecomponent {
   
-  background-color: $white;
-  
-  .pagecomponent {
+  .content-container > article {
     
-    .content-container > article {
-      
-      margin: $spacer 0 0;
-      
-      > header > h1 {
-        color: $gray-600;
-        font-weight: 300;
-        text-transform: uppercase;
-      }
-      
+    margin: $spacer 0 0;
+    
+    > header > h1 {
+      color: $page-heading-color;
+      font-weight: $page-heading-font-weight;
+      text-transform: uppercase;
     }
     
   }
@@ -49,18 +49,25 @@
 
 #Sidebar {
   
+  color: $sidebar-color;
+  background-color: $sidebar-bg;
+  
   .basecomponent {
     
     margin: $spacer 0;
     padding: $spacer;
-    background-color: $white;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: $sidebar-component-bg;
+    box-shadow: $sidebar-component-shadow;
     
     > header > h3 {
-      color: $gray-600;
-      font-size: 1.4rem;
-      font-weight: 300;
+      color: $sidebar-heading-color;
+      font-size: $sidebar-heading-font-size;
+      font-weight: $sidebar-heading-font-weight;
       text-transform: uppercase;
+    }
+    
+    > div.content {
+      font-size: $sidebar-content-font-size;
     }
     
   }
@@ -71,23 +78,27 @@
 
 #Widgets {
   
-  color: $gray-700;
+  color: $widgets-color;
   padding-bottom: $spacer;
-  background-color: $gray-500;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) inset;
+  background-color: $widgets-bg;
+  box-shadow: $widgets-shadow;
   
   .basecomponent {
     
     margin: $spacer 0 0;
     padding: $spacer;
-    background-color: $gray-200;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: $widgets-component-bg;
+    box-shadow: $widgets-component-shadow;
     
     > header > h3 {
-      color: $gray-600;
-      font-size: 1.6rem;
-      font-weight: 300;
+      color: $widgets-heading-color;
+      font-size: $widgets-heading-font-size;
+      font-weight: $widgets-heading-font-weight;
       text-transform: uppercase;
+    }
+    
+    > div.content {
+      font-size: $widgets-content-font-size;
     }
     
   }
@@ -98,13 +109,13 @@
 
 #Footer {
   
-  color: $white;
+  color: $footer-color;
   padding: $spacer 0;
-  font-size: 0.9rem;
-  background-color: $gray-600;
+  font-size: $footer-font-size;
+  background-color: $footer-bg;
   
   a {
-    color: $white;
+    color: inherit;
   }
   
 }
