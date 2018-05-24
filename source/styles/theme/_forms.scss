@@ -29,7 +29,8 @@ form {
   
   @if $enable-required-indicators {
     
-    .field.required > label {
+    .field.required > label,
+    .fieldholder-small.required > label {
       
       &:after {
         color: $form-required-color;
@@ -42,11 +43,28 @@ form {
   
 }
 
+// Form Legend Styles:
+
+form {
+  
+  .field {
+    
+    > legend {
+      font-size: $form-legend-font-size;
+      font-weight: $form-legend-font-weight;
+    }
+    
+  }
+  
+}
+
 // Optionset Field Styles:
 
 form {
   
   .field.optionset {
+    
+    margin-bottom: $spacer;
     
     &.has-valid {
       
@@ -78,6 +96,20 @@ form {
   
   .field.form-check {
     margin-bottom: $spacer;
+  }
+  
+}
+
+// Date Field Styles:
+
+form {
+  
+  .field {
+    
+    input.flatpickr-input {
+      background-color: $input-bg;
+    }
+    
   }
   
 }
