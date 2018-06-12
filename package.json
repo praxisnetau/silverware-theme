@@ -42,7 +42,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.1",
     "bootstrap-loader": "^2.2.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",

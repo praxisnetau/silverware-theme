@@ -18,13 +18,16 @@
     }
   ],
   "require": {
-    "silverware/silverware": "^1.5"
+    "silverware/silverware": "^1.8"
   },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     },
-    "installer-name": "silverware-theme"
+    "installer-name": "silverware-theme",
+    "expose": [
+        "production"
+    ]
   },
   "minimum-stability": "dev",
   "prefer-stable": true
